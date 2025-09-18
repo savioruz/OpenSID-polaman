@@ -1,3 +1,91 @@
-.env
+# OpenDesa/OpenSID GitIgnore
 
-desa
+# System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# PHP
+*.log
+*.cache
+.phpunit_cache/
+
+# CodeIgniter specific
+donjo-app/logs/*
+!donjo-app/logs/.htaccess
+!donjo-app/logs/index.html
+
+# Application specific logs
+storage/logs/*
+!storage/logs/.htaccess
+!storage/logs/index.html
+
+# Cache directories
+storage/framework/cache/*
+!storage/framework/cache/.gitkeep
+storage/framework/sessions/*
+!storage/framework/sessions/.gitkeep
+storage/framework/views/*
+!storage/framework/views/.gitkeep
+
+# Desa configuration and uploads
+desa/
+
+# Sensitive configuration files
+donjo-app/config/database.php
+app_key
+mitra
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Composer
+vendor/
+composer.lock
+
+# Database files
+*.sql
+*.sqlite
+*.db
+
+# Backup files
+backup_inkremental/*
+!backup_inkremental/index.html
+
+# Error logs
+error_log
+logs/
+log/
+
+# File uploads and media
+assets/files/*
+!assets/files/.htaccess
+assets/import/*
+!assets/import/.htaccess
+
+# Archive files
+*.zip
+*.rar
+*.tar.gz
+*.7z
+
+# SSL certificates
+*.pem
+*.key
+*.crt
+*.cert
+
+# Custom ignores
+underconstructions.html
+maintenance.html
