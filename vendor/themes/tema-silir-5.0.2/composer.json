@@ -1,0 +1,14 @@
+{
+  "name": "opensid/silir-web-theme",
+  "type": "template",
+  "description": "Tema Silir, tema premium OpenSID",
+  "homepage": "https://github.com/OpenSID/tema-silir",
+  "keywords": [
+    "Themes",
+    "OpenSID"
+  ],
+  "authors": [{
+    "name": "Diki Siswanto",
+    "email": "dickyachmady@gmail.com"
+  }]
+}

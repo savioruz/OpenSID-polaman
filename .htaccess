@@ -1,0 +1,56 @@
+RewriteEngine on
+RewriteBase /
+
+# Prevent index dirs
+RewriteCond $1
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+# General dirs / files
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+# Protect Folder Not Index
+Options All -Indexes
+
+# Restrict access to DotFiles (like .htaccess, .gitignore....)
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Restrict access to system files
+<FilesMatch "^(composer.json|composer.lock|mitra|app_key)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "(?i)\.(zip|rar)$">
+  Deny from all
+</FilesMatch>
+
+# Expire Caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access 1 year"
+  
+  # Images
+  ExpiresByType image/jpg "access 1 year"
+  ExpiresByType image/jpeg "access 1 year"
+  ExpiresByType image/gif "access 1 year"
+  ExpiresByType image/png "access 1 year"
+  ExpiresByType image/webp "access 1 year"
+  ExpiresByType image/svg+xml "access 1 year"
+  ExpiresByType image/x-icon "access 1 year"
+
+  # CSS, JavaScript
+  ExpiresByType text/css "access 1 year"
+  ExpiresByType application/javascript "access 1 year"
+  ExpiresByType application/x-javascript "access 1 year"
+
+  # Others
+  ExpiresByType application/pdf "access 1 year"
+  ExpiresByType application/font-woff "access 1 year" 
+  ExpiresByType application/font-woff2 "access 1 year"
+</IfModule>
