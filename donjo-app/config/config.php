@@ -625,8 +625,8 @@ $config['youtube']        = 'https://www.youtube.com/KomunitasOpenSID-OpenDesa';
 | - Token Pantau (Default)
 |
 */
-$config['server_pantau'] = 'https://pantau.opensid.my.id';
-$config['token_pantau']  = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6bnVsbCwidGltZXN0YW1wIjoxNjAzNDY2MjM5fQ.HVCNnMLokF2tgHwjQhSIYo6-2GNXB4-Kf28FSIeXnZw';
+$config['server_pantau'] = ''; // Disabled for privacy
+$config['token_pantau']  = ''; // Disabled for privacy
 
 /*
 |--------------------------------------------------------------------------

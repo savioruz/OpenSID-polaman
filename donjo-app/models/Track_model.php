@@ -88,6 +88,9 @@ class Track_model extends CI_Model
                 case 'testing':
                 case 'production':
                     $tracker = config_item('server_pantau');
+                    if (empty($tracker)) {
+                        return;
+                    }
                     break;
 
                 default:
